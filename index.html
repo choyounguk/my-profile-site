@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>조영욱 | Profile</title>
+  <meta name="description" content="IT를 공부하고 있는 학생 조영욱의 프로필 웹사이트" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#faf7f0',
+            ink: {
+              700: '#3f3a34',
+              800: '#2b2723',
+              900: '#1c1a17',
+            },
+            accent: {
+              100: '#fbe7d4',
+              500: '#d97a3f',
+              600: '#c2652d',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-cream text-ink-800 antialiased" style="font-family: 'Noto Sans KR', sans-serif;">
+
+  <!-- Header / Nav -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-ink-900/10">
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="#hero" class="text-lg font-extrabold text-ink-900">조영욱<span class="text-accent-500">.</span></a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-700">
+        <li><a href="#about" class="nav-link hover:text-accent-600 transition-colors">소개</a></li>
+        <li><a href="#skills" class="nav-link hover:text-accent-600 transition-colors">기술 스택</a></li>
+        <li><a href="#projects" class="nav-link hover:text-accent-600 transition-colors">프로젝트</a></li>
+        <li><a href="#contact" class="nav-link hover:text-accent-600 transition-colors">연락처</a></li>
+      </ul>
+
+      <a href="#contact" class="hidden md:inline-flex items-center rounded-full bg-ink-900 text-cream text-sm font-semibold px-5 py-2.5 hover:bg-accent-600 transition-colors">
+        연락하기
+      </a>
+
+      <button id="menu-btn" class="md:hidden p-2 text-ink-800" aria-label="메뉴 열기">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-ink-900/10 bg-cream">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-ink-700">
+        <li><a href="#about" class="mobile-nav-link block hover:text-accent-600">소개</a></li>
+        <li><a href="#skills" class="mobile-nav-link block hover:text-accent-600">기술 스택</a></li>
+        <li><a href="#projects" class="mobile-nav-link block hover:text-accent-600">프로젝트</a></li>
+        <li><a href="#contact" class="mobile-nav-link block hover:text-accent-600">연락처</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="pt-36 pb-20 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center fade-in">
+        <div>
+          <span class="block w-16 h-1 bg-ink-900 mb-8"></span>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-ink-900 leading-[1.15]">
+            학생<br />조영욱입니다
+          </h1>
+          <p class="mt-6 text-lg text-ink-700 max-w-md leading-relaxed">
+            어제보다 나은 오늘, 오늘보다 나은 내일.
+          </p>
+          <div class="mt-10 flex items-center gap-4">
+            <a href="#projects" class="rounded-full bg-ink-900 text-cream font-semibold px-7 py-3.5 hover:bg-accent-600 transition-colors">
+              프로젝트 보기
+            </a>
+            <a href="#contact" class="rounded-full border border-ink-900/20 text-ink-800 font-semibold px-7 py-3.5 hover:border-accent-500 hover:text-accent-600 transition-colors">
+              연락하기
+            </a>
+          </div>
+
+          <div class="mt-14">
+            <p class="text-sm font-bold uppercase tracking-widest text-ink-700 mb-3">Learning</p>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-semibold bg-ink-900/5 text-ink-800 rounded-full px-4 py-2">Python</span>
+              <span class="text-xs font-semibold bg-ink-900/5 text-ink-800 rounded-full px-4 py-2">HTML</span>
+              <span class="text-xs font-semibold bg-ink-900/5 text-ink-800 rounded-full px-4 py-2">CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-[2rem] bg-ink-900 overflow-hidden shadow-xl relative">
+            <img src="profile.jpg" alt="조영욱 프로필 사진" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-ink-900/10 to-transparent"></div>
+            <span class="absolute top-6 left-6 text-5xl text-accent-500/80 font-serif leading-none">&ldquo;</span>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-accent-500 text-cream rounded-2xl px-6 py-4 shadow-lg hidden sm:block">
+            <p class="text-xs uppercase tracking-widest font-bold opacity-90">Role</p>
+            <p class="text-lg font-extrabold">학생</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 px-6 fade-in">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-accent-600">About Me</h2>
+          <p class="mt-2 text-3xl font-extrabold text-ink-900">소개</p>
+        </div>
+        <div class="rounded-3xl border border-ink-900/10 bg-white/60 p-10 md:p-14 shadow-sm">
+          <p class="text-xl md:text-2xl font-medium text-ink-800 leading-relaxed">
+            안녕하세요. 열심히 IT를 공부하고 있는 학생 <span class="text-accent-600 font-bold">조영욱</span>입니다.
+          </p>
+          <p class="mt-4 text-ink-700">
+            직업 · 학생
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 px-6 bg-ink-900/[0.03] fade-in">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-accent-600">Skills</h2>
+          <p class="mt-2 text-3xl font-extrabold text-ink-900">기술 스택</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <!-- Python -->
+          <div class="skill-card rounded-2xl bg-white border border-ink-900/10 p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="mx-auto mb-4 h-14 w-14 rounded-2xl bg-accent-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2c-3.5 0-3.7 1.5-3.7 1.5v1.6h3.8v.6H6.9S4 5.4 4 9s2.5 3.5 2.5 3.5h1.5v-2s-.1-2.5 2.5-2.5h3.5s2.4.1 2.4-2.3V4.5S16.7 2 12 2zM9.7 3.4c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/>
+                <path d="M12 22c3.5 0 3.7-1.5 3.7-1.5v-1.6h-3.8v-.6h5.2s2.9.3 2.9-3.3-2.5-3.5-2.5-3.5h-1.5v2s.1 2.5-2.5 2.5H10s-2.4-.1-2.4 2.3v2.2S7.3 22 12 22zm2.3-1.4c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-ink-900">Python</h3>
+            <p class="mt-1 text-sm text-ink-700">기초 문법 학습 중</p>
+          </div>
+
+          <!-- HTML -->
+          <div class="skill-card rounded-2xl bg-white border border-ink-900/10 p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="mx-auto mb-4 h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 2l1.7 19L12 23l7.3-2L21 2H3zm14.5 6H8.1l.2 2h9l-.7 7.5-4.6 1.4-4.6-1.4-.3-3.3h2.1l.2 1.6 2.6.8 2.6-.8.3-3H6.7l-.6-6.8h11.6l-.2 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-ink-900">HTML</h3>
+            <p class="mt-1 text-sm text-ink-700">마크업 학습 중</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="skill-card rounded-2xl bg-white border border-ink-900/10 p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="mx-auto mb-4 h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 2l1.7 19L12 23l7.3-2L21 2H3zm13.3 6.4H8l.2 2.2h7.9l-.6 6.5-3.5 1-3.5-1-.2-2.6h2.1l.1 1.1 1.5.4 1.5-.4.2-2.1H6.9l-.5-5.3h10.4l-.5.2z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-ink-900">CSS</h3>
+            <p class="mt-1 text-sm text-ink-700">스타일링 학습 중</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 px-6 fade-in">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-accent-600">Projects</h2>
+          <p class="mt-2 text-3xl font-extrabold text-ink-900">프로젝트 / 포트폴리오</p>
+          <p class="mt-3 text-ink-700">아래 카드는 예시입니다. 실제 프로젝트로 자유롭게 교체해 주세요.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Project Card 1 (예시 - 실제 프로젝트로 교체) -->
+          <article class="project-card group rounded-2xl border border-ink-900/10 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div class="relative h-36 overflow-hidden">
+              <img src="https://picsum.photos/seed/project-website/600/300" alt="개인 웹사이트 만들기 샘플 이미지" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-3 left-3 bg-ink-900/80 text-cream text-sm font-black rounded-full h-8 w-8 flex items-center justify-center">01</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-ink-900">개인 웹사이트 만들기</h3>
+              <p class="mt-2 text-sm text-ink-700">HTML/CSS로 만든 첫 정적 웹페이지 프로젝트입니다. (예시 내용)</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">HTML</span>
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">CSS</span>
+              </div>
+              <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-600 hover:underline">
+                자세히 보기 →
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 2 (예시 - 실제 프로젝트로 교체) -->
+          <article class="project-card group rounded-2xl border border-ink-900/10 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div class="relative h-36 overflow-hidden">
+              <img src="https://picsum.photos/seed/project-python/600/300" alt="파이썬 계산기 샘플 이미지" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-3 left-3 bg-ink-900/80 text-cream text-sm font-black rounded-full h-8 w-8 flex items-center justify-center">02</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-ink-900">파이썬 계산기</h3>
+              <p class="mt-2 text-sm text-ink-700">Python 기초 문법을 활용해 만든 콘솔 계산기 프로젝트입니다. (예시 내용)</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">Python</span>
+              </div>
+              <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-600 hover:underline">
+                자세히 보기 →
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 3 (예시 - 실제 프로젝트로 교체) -->
+          <article class="project-card group rounded-2xl border border-ink-900/10 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all">
+            <div class="relative h-36 overflow-hidden">
+              <img src="https://picsum.photos/seed/project-todo/600/300" alt="할 일 목록 앱 샘플 이미지" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-3 left-3 bg-ink-900/80 text-cream text-sm font-black rounded-full h-8 w-8 flex items-center justify-center">03</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-ink-900">할 일 목록 앱</h3>
+              <p class="mt-2 text-sm text-ink-700">HTML/CSS/JS로 만든 간단한 To-Do List 웹앱입니다. (예시 내용)</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">HTML</span>
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">CSS</span>
+                <span class="text-xs font-semibold bg-ink-900/5 text-ink-700 rounded-full px-3 py-1">JavaScript</span>
+              </div>
+              <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-600 hover:underline">
+                자세히 보기 →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-6 bg-ink-900 fade-in">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-sm font-bold uppercase tracking-widest text-accent-500">Contact</h2>
+        <p class="mt-2 text-3xl font-extrabold text-cream">연락처</p>
+        <p class="mt-4 text-ink-700 text-white/60">궁금한 점이 있으시면 언제든지 이메일로 연락 주세요.</p>
+
+        <a href="mailto:choyeonguk0223@gmail.com"
+           class="mt-8 inline-flex items-center gap-3 rounded-full bg-cream text-ink-900 font-semibold px-8 py-4 hover:bg-accent-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          choyeonguk0223@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 px-6 bg-ink-900 border-t border-white/10">
+    <p class="text-center text-sm text-white/40">&copy; 2026 조영욱. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

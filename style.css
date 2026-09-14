@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Active nav link */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: #c2652d;
+  font-weight: 700;
+}
+
+/* Small lift on skill/project cards handled by Tailwind utilities;
+   this covers browsers where backdrop-filter isn't supported. */
+@supports not (backdrop-filter: blur(1px)) {
+  header {
+    background-color: #faf7f0;
+  }
+}
